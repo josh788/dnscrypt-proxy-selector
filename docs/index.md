@@ -12,7 +12,7 @@ with VPN (Virtual Private Network) But You Can Use It With Tor (The Onion Router
 
 <a href="https://github.com/josh788/dnscrypt-proxy-selector/archive/master.zip"><button>DOWNLOAD AS .ZIP</button></a>
 
-<p>Or To DOWLOAD Using git Use <b></b></p>
+<p>Or To DOWLOAD Using git Use <b>git clone https://github.com/josh788/dnscrypt-proxy-selector.git</b></p>
 
 
 

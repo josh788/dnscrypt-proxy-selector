@@ -12,7 +12,7 @@
 Selection of 50+ Servers you can Get Dns From Uncensored Countries Such As Iceland Or Romainia.<br> It's Recomended To Use DNSCRYPT
 with VPN (Virtual Private Network) But You Can Use It With Tor (The Onion Router) As Well.</p></center>
 
-<a href="https://github.com/josh788/dnscrypt-proxy-selector/archive/master.zip"><button>DOWNLOAD AS .ZIP</button></a>
+<a href="https://github.com/josh788/dnscrypt-proxy-selector/archive/master.zip"><button>DOWNLOAD AS .ZIP</button></a><a href="https://github.com/josh788/dnscrypt-proxy-selector/blob/master/dnscrypt-proxy-selector-master.tar.gz?raw=true"><button>DOWNLOAD AS .TAR.GZ</button></a>
 
 <p>Or To DOWLOAD Using git Use <b>git clone https://github.com/josh788/dnscrypt-proxy-selector.git</b></p>
 

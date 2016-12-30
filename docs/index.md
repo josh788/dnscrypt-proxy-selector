@@ -19,5 +19,5 @@ with VPN (Virtual Private Network) But You Can Use It With Tor (The Onion Router
 <br>
 <br>
 
-<div id="footer"><center><h1>&copy;2017 BY Joshua Chambers / Josh788</h1></center></div>
+<div id="footer"><center><br><h1>&copy;2017 BY Joshua Chambers / Josh788</h1></center></div>
 

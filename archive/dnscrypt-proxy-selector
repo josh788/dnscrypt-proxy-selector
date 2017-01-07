@@ -1,0 +1,92 @@
+#!/bin/bash
+
+#
+#
+#    Dnscrypt-proxy-selector
+#	   1.0.0A
+#	Allows You To Select Which Proxy dns To Use.
+#
+#	"Darken the city night is awire , steam in the subway earth is afire." - duran duran
+#	Created By Joshua Adam Leigh Chambers (c)2017 
+#	open-source edit where applicable. do keep a note of original creator.
+#
+
+dnscryptproxylist="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv"
+originalscriptURL="https://github.com/josh788/dnscrypt-proxy-selector/"
+
+
+function Startup {
+clear
+tput setaf 6
+tput bold
+echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+echo "─██████████████─██████████████─██████─────────██████████████─██████████████─██████████████─██████████████─████████████████───"
+echo "─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░░░██───"
+echo "─██░░██████████─██░░██████████─██░░██─────────██░░██████████─██░░██████████─██████░░██████─██░░██████░░██─██░░████████░░██───"
+echo "─██░░██─────────██░░██─────────██░░██─────────██░░██─────────██░░██─────────────██░░██─────██░░██──██░░██─██░░██────██░░██───"
+echo "─██░░██████████─██░░██████████─██░░██─────────██░░██████████─██░░██─────────────██░░██─────██░░██──██░░██─██░░████████░░██───"
+echo "─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░██─██░░██─────────────██░░██─────██░░██──██░░██─██░░░░░░░░░░░░██───"
+echo "─██████████░░██─██░░██████████─██░░██─────────██░░██████████─██░░██─────────────██░░██─────██░░██──██░░██─██░░██████░░████───"
+echo "─────────██░░██─██░░██─────────██░░██─────────██░░██─────────██░░██─────────────██░░██─────██░░██──██░░██─██░░██──██░░██─────"
+echo "─██████████░░██─██░░██████████─██░░██████████─██░░██████████─██░░██████████─────██░░██─────██░░██████░░██─██░░██──██░░██████─"
+echo "─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─────██░░██─────██░░░░░░░░░░██─██░░██──██░░░░░░██─"
+echo "─██████████████─██████████████─██████████████─██████████████─██████████████─────██████─────██████████████─██████──██████████─"
+echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+tput setaf 1
+echo "──────────────────────────────────────────────────[ DNSCRYPT-PROXY-SELECTOR ]────────────────────────────────────────────────"
+echo ""
+echo ""
+echo "[───────────────────────[MENU]───────────────────────────]"
+tput setaf 6
+echo "[ 1) Select & connect  ]"
+echo "[ 2) Check if running  ]"
+echo "[ 3) Exit              ]"
+tput setaf 1
+echo "[───────────────────────[MENU]───────────────────────────]"
+tput setaf 6
+read option;
+checkd
+}
+
+function checkd {
+
+if [ $option == "1" ]
+then
+S-C
+elif [ $option == "2" ]
+then
+netstat -tulpn | grep :53
+echo "press enter when ready."
+read enterkey;
+clear
+Startup
+elif [ $option == "3" ]
+then
+echo "Exiting..."
+clear
+exit
+else 
+echo "Invalid Option."
+echo "press enter to go back."
+read enterkey;
+Startup
+fi
+}
+
+function S-C {
+
+column -s, -t < $dnscryptproxylist | less -#2 -N -S
+echo "please enter the name of the proxy : cs-ch "
+read resolvername;
+
+/usr/sbin/dnscrypt-proxy -d -R $resolvername
+netstat -tulpn | grep :53
+echo "if you can see 127.0.0.1:53 then your all set. :)"
+echo "press enter to return to the menu."
+read enterkey;
+Startup
+
+}
+
+
+Startup

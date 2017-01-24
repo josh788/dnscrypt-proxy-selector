@@ -3,7 +3,7 @@
 #
 #
 #    Dnscrypt-proxy-selector
-#	   1.0.7C (3rd Build)    previous version = 1.0.5B(2nd Build)
+#	   1.0.7-1B (4th Build)    previous version = 1.0.7C(3rd Build)
 #	Allows You To Select Which Proxy dns To Use.
 #
 #	"Darken the city night is awire , steam in the subway earth is afire." - duran duran
@@ -14,7 +14,7 @@
 dnscryptproxylist="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv"
 originalscriptURL="https://github.com/josh788/dnscrypt-proxy-selector/"
 githubpageURL="https://josh788.github.io/dnscrypt-proxy-selector/"
-previousVersion="1.0.5B (Second-Design)"
+previousVersion="1.0.7C (Third-Design)"
 
 function Startup {
 clear
@@ -35,15 +35,16 @@ echo "─██████████████─████████�
 echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
 tput setaf 1
 echo "──────────────────────────────────────────────────[ DNSCRYPT-PROXY-SELECTOR ]────────────────────────────────────────────────"
-echo "                                                           1.0.7C                                                            "
+echo "                                                           1.0.7-1B                                                            "
 echo ""
 echo "[───────────────────────[MENU]───────────────────────────]"
 tput setaf 6
-echo "[ 1) Select & connect  ]"
-echo "[ 2) Check if running  ]"
+echo "[ 1) Select & connect                                    ]"
+echo "[ 2) Check if running                                    ]"
 echo "[ 3) Check DNS using [http://www.dnsleaktest.com/]       ]"
 echo "[ 4) Changes since Last Version release                  ]"
-echo "[ 5) Exit              ]"
+echo "[ 5) Update Proxy List                                   ]"
+echo "[ 6) Exit                                                ]"
 tput setaf 1
 echo "[───────────────────────[MENU]───────────────────────────]"
 tput setaf 6
@@ -69,6 +70,8 @@ sensible-browser http://www.dnsleaktest.com/ &
 elif [ $option == "4" ]
 then
 echo "[─────────────────────── [Changes] ───────────────────────]"
+echo " Added Update Function To Allow Update To Be Made.         "
+echo "───────────────────────────────────────────────────────────"
 echo " Fix To Check Dns Option , now Runs In The Background.     "
 echo "───────────────────────────────────────────────────────────"
 echo " New In 1.0.5B : Fix To The S-C Function Means you can     "
@@ -83,6 +86,8 @@ echo "Press Enter To Continue."
 read enterkey;
 Startup
 elif [ $option == "5" ]
+update-list
+elif [ $option == "6" ]
 then
 echo "Exiting..."
 clear
@@ -108,6 +113,18 @@ echo "press enter to return to the menu."
 read enterkey;
 Startup
 
+}
+
+function update-list {
+
+echo "[─────────────────────────────────────────────────────────]"
+echo " Updating proxy List...."
+wget -P /usr/share/dnscrypt-proxy/ https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-resolvers.csv
+echo "Saving to /usr/share/dnscrypt-proxy/ ..."
+echo "Done! Press enter to Return To The Menu."
+echo "[─────────────────────────────────────────────────────────]"
+read null;
+startup
 }
 
 

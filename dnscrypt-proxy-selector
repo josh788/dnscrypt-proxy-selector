@@ -3,7 +3,7 @@
 #
 #
 #    Dnscrypt-proxy-selector
-#	   1.0.5B (2nd Build)    previous version = 1.0.0A
+#	   1.0.7C (3rd Build)    previous version = 1.0.5B(2nd Build)
 #	Allows You To Select Which Proxy dns To Use.
 #
 #	"Darken the city night is awire , steam in the subway earth is afire." - duran duran
@@ -14,7 +14,7 @@
 dnscryptproxylist="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv"
 originalscriptURL="https://github.com/josh788/dnscrypt-proxy-selector/"
 githubpageURL="https://josh788.github.io/dnscrypt-proxy-selector/"
-previousVersion="1.0.0A (First-Design)"
+previousVersion="1.0.5B (Second-Design)"
 
 function Startup {
 clear
@@ -35,7 +35,7 @@ echo "─██████████████─████████�
 echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
 tput setaf 1
 echo "──────────────────────────────────────────────────[ DNSCRYPT-PROXY-SELECTOR ]────────────────────────────────────────────────"
-echo "                                                           1.0.5B                                                            "
+echo "                                                           1.0.7C                                                            "
 echo ""
 echo "[───────────────────────[MENU]───────────────────────────]"
 tput setaf 6
@@ -65,10 +65,12 @@ clear
 Startup
 elif [ $option == "3" ]
 then
-sensible-browser http://www.dnsleaktest.com/
+sensible-browser http://www.dnsleaktest.com/ &
 elif [ $option == "4" ]
 then
 echo "[─────────────────────── [Changes] ───────────────────────]"
+echo " Fix To Check Dns Option , now Runs In The Background.     "
+echo "───────────────────────────────────────────────────────────"
 echo " New In 1.0.5B : Fix To The S-C Function Means you can     "
 echo " Find Your selected Proxy At 127.0.0.1:53.                 "
 echo ""

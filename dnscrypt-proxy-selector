@@ -86,6 +86,7 @@ echo "Press Enter To Continue."
 read enterkey;
 Startup
 elif [ $option == "5" ]
+then
 update-list
 elif [ $option == "6" ]
 then
